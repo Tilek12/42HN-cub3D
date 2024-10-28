@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 14:37:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/27 17:19:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:17:49 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -285,6 +285,7 @@ void		init_sprite_pistol(t_data *data, t_sprite *sprite);
 void		init_sprite_knife(t_data *data, t_sprite *sprite);
 void		invert_view(t_player *player);
 void		simulation(void *param);
+void		simulation_func(t_data *data, t_sprite *sprite);
 void		close_hook(void *param);
 void		resize_hook(int32_t new_width, int32_t new_height, void *param);
 void		handle_minimap(t_data *data);

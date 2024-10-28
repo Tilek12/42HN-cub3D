@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:06:03 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/14 17:05:47 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:10:54 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
+/*--------------------------------------*/
+/*  Define distance to the image plane  */
+/*--------------------------------------*/
 void	define_plane_distance(t_ray *ray, t_player *player)
 {
 	double	angle_difference;
@@ -33,6 +36,9 @@ void	define_plane_distance(t_ray *ray, t_player *player)
 	ray->direction.y /= cos(angle_difference);
 }
 
+/*--------------------------------------*/
+/*  Define the side where wall appears  */
+/*--------------------------------------*/
 void	define_wall_side(t_ray *ray)
 {
 	if (ray->side == VERTICAL)
@@ -51,6 +57,9 @@ void	define_wall_side(t_ray *ray)
 	}
 }
 
+/*-------------------------------*/
+/*  Define wall collision point  */
+/*-------------------------------*/
 void	define_wall_collision(t_data *data, t_ray *ray)
 {
 	int	wall_hit;
@@ -77,6 +86,9 @@ void	define_wall_collision(t_data *data, t_ray *ray)
 	define_wall_side(ray);
 }
 
+/*------------------------*/
+/*  Define ray direction  */
+/*------------------------*/
 void	define_step_direction(t_ray *ray, t_player *player)
 {
 	if (ray->direction.x < 0)
@@ -105,6 +117,9 @@ void	define_step_direction(t_ray *ray, t_player *player)
 	}
 }
 
+/*----------------------------*/
+/*  Ray casting calculations  */
+/*----------------------------*/
 void	ray_casting(t_data *data)
 {
 	t_ray	ray;

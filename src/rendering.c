@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   rendering.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:41:30 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/20 14:27:03 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:11:38 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
+/*------------------------*/
+/*  Define texture pixel  */
+/*------------------------*/
 int	get_pixel(mlx_texture_t *texture, int x, int y)
 {
 	int	index;
@@ -25,6 +28,9 @@ int	get_pixel(mlx_texture_t *texture, int x, int y)
 	return (pixel);
 }
 
+/*------------------------*/
+/*  Define wall textures  */
+/*------------------------*/
 void	define_texture_values(t_data *data, t_ray *ray, \
 							mlx_texture_t **texture, double *wall_x)
 {
@@ -43,6 +49,9 @@ void	define_texture_values(t_data *data, t_ray *ray, \
 	*wall_x -= floor(*wall_x);
 }
 
+/*----------------------*/
+/*  Draw wall textures  */
+/*----------------------*/
 void	draw_walls(t_data *data, t_ray *ray, int x, int y)
 {
 	t_point_int		tex;
@@ -72,6 +81,9 @@ void	draw_walls(t_data *data, t_ray *ray, int x, int y)
 	}
 }
 
+/*--------------------------*/
+/*  Draw ceiling and floor  */
+/*--------------------------*/
 void	draw_ceiling_floor(t_data *data, t_ray *ray, int x)
 {
 	int	y;
@@ -90,6 +102,9 @@ void	draw_ceiling_floor(t_data *data, t_ray *ray, int x)
 	}
 }
 
+/*---------------*/
+/*  Render game  */
+/*---------------*/
 void	rendering(t_data *data, t_ray *ray, int x)
 {
 	ray->line_height = (int)data->height / ray->plane_dist;

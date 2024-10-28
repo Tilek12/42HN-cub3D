@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting_utils_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 14:31:34 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/21 12:18:33 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:10:30 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	define_wall_side(t_ray *ray)
 	}
 }
 
-// /*-------------------------------*/
-// /*  Define door collision point  */
-// /*-------------------------------*/
+/*-------------------------------*/
+/*  Define door collision point  */
+/*-------------------------------*/
 void	define_door_collision(t_data *data, t_ray *ray, int *wall_hit)
 {
 	if (data->map.map2d[ray->map.row][ray->map.column] == '2'

@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:21:15 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/27 16:31:20 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:18:23 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d_bonus.h"
 
+/*------------------*/
+/*  Set game timer  */
+/*------------------*/
 void	handle_timer(t_data *data)
 {
 	if (data->timer_active)
@@ -40,6 +43,9 @@ void	set_counter(t_data *data, int *counter)
 		mlx_set_mouse_pos(data->mlx, data->width / 2, data->height / 2);
 }
 
+/*-------------------------------*/
+/*  Check timer for ending game  */
+/*-------------------------------*/
 void	time_checker(t_data *data)
 {
 	time_t	current_time;
@@ -56,13 +62,16 @@ void	time_checker(t_data *data)
 		}
 		if (elapsed_time >= 20)
 		{
-			printf("-------------->Time's up! Exiting game...\n");
+			printf("------------->Time's up! Exiting game...<-------------\n");
 			free_exit(data, EXIT_SUCCESS);
 		}
 	}
 }
 
-void	another_simulation(t_data *data, t_sprite *sprite)
+/*-----------------------------------*/
+/*  Additional simulation functions  */
+/*-----------------------------------*/
+void	simulation_func(t_data *data, t_sprite *sprite)
 {
 	mlx_set_cursor_mode(data->mlx, MLX_MOUSE_HIDDEN);
 	movement_handler(data);
@@ -95,7 +104,7 @@ void	simulation(void *param)
 	data->img = mlx_new_image(data->mlx, data->width, data->height);
 	if (data->img == NULL)
 		error_free_exit(data, "Failed to create mlx image");
-	another_simulation(data, sprite);
+	simulation_func(data, sprite);
 	if (mlx_image_to_window(data->mlx, data->img, 0, 0) < 0)
 		error_free_exit(data, "Failed to display mlx image");
 }

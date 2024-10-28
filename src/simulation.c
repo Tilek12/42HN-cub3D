@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:21:15 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/26 14:42:07 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:19:41 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
+/*----------------------------*/
+/*  Define player's movement  */
+/*----------------------------*/
 void	move_player(t_data *data, double move_x, double move_y)
 {
 	t_player		*player;
@@ -39,6 +42,9 @@ void	move_player(t_data *data, double move_x, double move_y)
 		player->pos.x = new.x;
 }
 
+/*----------------------------*/
+/*  Handle player's movement  */
+/*----------------------------*/
 void	movement_hook(t_data *data)
 {
 	double	*angle;
@@ -66,6 +72,9 @@ void	movement_hook(t_data *data)
 	}
 }
 
+/*-------------------------*/
+/*  Start game simulation  */
+/*-------------------------*/
 void	simulation(void *param)
 {
 	t_data	*data;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 18:49:19 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/26 20:51:09 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:35:59 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	free_array(char **array)
 	free(array);
 }
 
+/*----------------------------------------------*/
+/*  Free all allocated memory and exit program  */
+/*----------------------------------------------*/
 void	free_exit(t_data *data, int exit_status)
 {
 	if (data->img != NULL)

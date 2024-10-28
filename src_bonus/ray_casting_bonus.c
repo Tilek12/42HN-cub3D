@@ -6,12 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:06:03 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/22 12:18:26 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:10:24 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d_bonus.h"
 
+/*----------------------------*/
+/*  Ray casting calculations  */
+/*----------------------------*/
 void	ray_casting(t_data *data)
 {
 	t_ray	*ray;

@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   init_data_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:25:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/26 15:31:32 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:01:50 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d_bonus.h"
 
 /*--------------------------*/
-/*  Initialize data struct  */
+/*  Initialize null values  */
 /*--------------------------*/
-
 void	init_null(mlx_image_t *image[], int limit)
 {
 	int	i;
@@ -28,6 +27,9 @@ void	init_null(mlx_image_t *image[], int limit)
 	}
 }
 
+/*--------------------------*/
+/*  Initialize data values  */
+/*--------------------------*/
 void	init_vars(t_data *data)
 {
 	data->width = WIDTH;
@@ -43,8 +45,16 @@ void	init_vars(t_data *data)
 	data->timer_active = 0;
 	data->game_over = 0;
 	data->sound_pid = 0;
+	data->is_minimap = true;
+	data->is_door = false;
+	data->weapon = RIFLE;
+	data->is_playing_sound = false;
+	data->mlx = NULL;
 }
 
+/*--------------------------*/
+/*  Initialize data struct  */
+/*--------------------------*/
 void	init_data(t_data *data)
 {
 	init_vars(data);
@@ -52,11 +62,6 @@ void	init_data(t_data *data)
 	init_null(data->sprite.bullet, 6);
 	init_null(data->sprite.pistol, 9);
 	init_null(data->sprite.knife, 7);
-	data->is_minimap = true;
-	data->is_door = false;
-	data->weapon = RIFLE;
-	data->is_playing_sound = false;
-	data->mlx = NULL;
 	data->mlx = mlx_init(data->width, data->height, "cub3D", true);
 	if (data->mlx == NULL)
 		error_free_exit(data, "Failed to create mlx");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 18:52:54 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/24 15:47:19 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:03:17 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf(RED"Checkout the number of arguments!\n"RESET);
+		printf(RED"Incorrect number of arguments!\n"RESET);
 		exit(EXIT_FAILURE);
 	}
 	return (0);

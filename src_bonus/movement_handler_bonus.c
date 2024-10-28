@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement_handler_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:50:13 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/26 14:39:01 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:22:48 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	movement_mouse(t_data *data)
 	mlx_set_mouse_pos(data->mlx, data->width / 2, data->height / 2);
 }
 
-/*----------------------------*/
-/*  Handle player's movement  */
-/*----------------------------*/
+/*-----------------*/
+/*  Handle sounds  */
+/*-----------------*/
 void	check_sound(t_data *data, bool is_moving)
 {
 	if (is_moving)
@@ -82,6 +82,9 @@ void	check_sound(t_data *data, bool is_moving)
 	}
 }
 
+/*--------------------------------------*/
+/*  Movement button's press identifier  */
+/*--------------------------------------*/
 bool	move_hooks(t_data *data, bool is_moving, double *angle)
 {
 	if (mlx_is_key_down(data->mlx, MLX_KEY_W))
@@ -107,6 +110,9 @@ bool	move_hooks(t_data *data, bool is_moving, double *angle)
 	return (is_moving);
 }
 
+/*----------------------------*/
+/*  Handle player's movement  */
+/*----------------------------*/
 void	movement_handler(t_data *data)
 {
 	double	*angle;

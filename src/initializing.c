@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   initializing.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusupov <ryusupov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:25:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/10/26 21:04:36 by ryusupov         ###   ########.fr       */
+/*   Updated: 2024/10/28 19:02:54 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
+/*-----------------------------*/
+/*  Initialize texture struct  */
+/*-----------------------------*/
 void	init_texture(t_data *data)
 {
 	t_texture	*texture;
@@ -30,6 +33,9 @@ void	init_texture(t_data *data)
 		error_free_exit(data, "Failed to create mlx texture");
 }
 
+/*------------------------*/
+/*  Invert player's view  */
+/*------------------------*/
 void	invert_view(t_player *player)
 {
 	if (player->pov == NORTH)
@@ -42,6 +48,9 @@ void	invert_view(t_player *player)
 		player->angle = radian(180);
 }
 
+/*----------------------------*/
+/*  Initialize player struct  */
+/*----------------------------*/
 void	init_player(t_data *data)
 {
 	t_player	*player;
@@ -63,6 +72,9 @@ void	init_player(t_data *data)
 	invert_view(player);
 }
 
+/*-------------------------*/
+/*  Initialize map struct  */
+/*-------------------------*/
 void	init_map(t_data *data)
 {
 	t_map	*map;
@@ -74,6 +86,9 @@ void	init_map(t_data *data)
 		data->texture.rgb_floor[1], data->texture.rgb_floor[2], 255);
 }
 
+/*--------------------------*/
+/*  Initialize data struct  */
+/*--------------------------*/
 void	init_data(t_data *data)
 {
 	data->width = WIDTH;
