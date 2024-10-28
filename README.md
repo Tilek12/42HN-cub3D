@@ -11,7 +11,7 @@
   </h2>
 </h1>
 
-## :clipboard: Project info: [subject](https://github.com/Tilek12/42HN-minishell/blob/master/.git_docs_minishell/minishell_subject.pdf)
+## :clipboard: Project info: [subject](https://github.com/Tilek12/42HN-cub3D/blob/master/.git_docs_cub3D/cub3D_subject.pdf)
 
 ## :trident: Foreword
 
@@ -182,12 +182,19 @@ Move left    | Shift the image left
 
 ---
 
-:space_invader: Gameplay
+## :space_invader: Gameplay
 
 <p align="center">
-  <img src="https://github.com/Tilek12/42HN-fract-ol/blob/master/.git_docs_fract-ol/Burning_ship_o.png">
+  <img src="https://github.com/Tilek12/42HN-cub3D/blob/master/.git_docs_cub3D/cube_img_1.png">
 </p>
 <p align="center">
-  <img src="https://github.com/Tilek12/42HN-fract-ol/blob/master/.git_docs_fract-ol/Burning_ship_p.png">
+  <img src="https://github.com/Tilek12/42HN-cub3D/blob/master/.git_docs_cub3D/cube_img_2.png">
 </p>
+
+
+
+
+https://github.com/user-attachments/assets/18f02f14-1488-4c01-9bf6-23de69cc222f
+
+
 
